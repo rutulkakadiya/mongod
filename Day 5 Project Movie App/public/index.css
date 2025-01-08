@@ -1,0 +1,104 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Montserrat", serif;
+}
+
+.addMovie{
+    background: rgba(0,0,0,0.5);
+}
+
+.addMovie{
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+}
+
+/* .customDiv{
+    height: 100px;
+    width: 50px;
+    border: 10px solid black;
+    position: absolute;
+    top: 70vh;
+    right: -30px;
+    opacity: 0;
+    transition-duration: 0.5s;
+}
+
+.movie:hover .customDiv{
+    opacity: 1;
+    right: 0px;
+}
+
+.editIcon{
+    height: 40px;
+    width: 40px;
+    border: 1px solid #999999;
+    color: #575656;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-size: 20px;
+}
+
+.editIcon p{
+    color: red;
+}
+
+ */
+
+ 
+.editDiv{
+    background-color: white;
+     position: absolute;
+     top: 51vh;
+     right: -30px;
+     transition-duration: 0.5s;
+}
+
+
+.movieData:hover .editDiv{
+   right: 10px;
+}
+
+.editIcon{
+    height: 30px;
+    width: 30px;
+    border: 1px solid #999999;
+    color: #575656;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-size: 16px;
+}
+
+.editIcon:hover{
+    background-color: #399043;
+    color: #e6f9eb;
+}
+
+.deleteIcon{
+    height: 30px;
+    width: 30px;
+    border: 1px solid #999999;
+    color: #575656;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.deleteIcon:hover{
+    background-color: #d32f2f;
+    color: #fdecea; 
+}
+
+.bgdiv {
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+    <header class="h-[70px] w-[100%] flex justify-center items-center border">
+        <nav class="flex w-[85%] items-center justify-between">
+            <div class="logo w-[15%]">
+                <img class="h-[55px]" src="/Images/logo.png" alt="">
+            </div>
+
+            <div class="searchBar relative w-[70%]">
+                <i class="fa-solid fa-magnifying-glass text-[#838383] absolute top-[13px] left-3"></i>
+                <input type="text" class="border w-[60%] rounded-[5px] h-[40px] ps-[45px]"
+                    placeholder="Search for Movies, Events, Plays, Sports and Activities">
+            </div>
+
+            <div class="movie w-[20%] flex items-center">
+                <p>Rajkot <i class="fa-solid fa-angle-down"></i></p>
+                <button
+                    class="h-[35px] px-[20px] bg-[#d54048] text-white rounded-[5px] flex gap-[10px] items-center ms-[15px]"
+                    onclick="handleAddMovie()"><i class="fa-solid fa-arrow-up-from-bracket"></i> Add Movie</button>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="bgDiv h-[70vh] w-[100%] relative">
+        <img class="h-[100%] w-[100%]" src="<%= singleData.bgImage%>" alt="">
+
+        <div class="bgdiv absolute flex items-center h-[100%] w-[100%] top-[0px]">
+            <div class="movieImage ms-[7.5%] w-[18%]">
+                <img src="<%= singleData.image%>" class="h-[60vh] w-[100%] rounded-[5px]" alt="">
+            </div>
+
+            <div class="movieDetails ms-[30px] text-white w-[30%] h-[50vh]">
+                <p class="text-3xl font-bold"><%= singleData.name%></p>
+
+                <div class="rating flex items-center justify-between h-[70px] bg-[#333333] rounded-[10px] w-[100%] border border-black mt-[15px]">
+                    <p class="ps-[15px] font-semibold"><i class="fa-solid fa-star text-[#ec757f]"></i> <%= singleData.rating%></p>
+
+                    <button class="me-[15px] h-[45px] px-3 bg-white text-black font-semibold rounded-[10px]">Rate Now</button>
+                </div>
+
+                <p class="px-2 py-[3px] rounded-[5px] mt-[25px] bg-white text-black text-[15px]"><%= singleData.dimensions%></p>
+                <p class="px-2 py-[3px] rounded-[5px] mt-[10px] bg-white text-black text-[15px]"><%= singleData.language%></p>
+
+                <div class="detail flex items-center mt-3 font-semibold">
+                    <p><%= singleData.timing%></p>
+                    <i class="fa-solid fa-circle text-white ms-3 text-[5px]"></i>
+                    <p class="ms-3"><%= singleData.category%></p>
+                    <i class="fa-solid fa-circle text-white ms-3 text-[5px]"></i>
+                    <p class="ms-3"><%= singleData.viewer%></p>
+                    <i class="fa-solid fa-circle text-white ms-3 text-[5px]"></i>
+                    <p class="ms-3"><%= singleData.releaseDate%></p>
+                </div>
+
+                <button class="h-[50px] px-[50px] mt-[30px] rounded-[5px] font-semibold bg-[#f74464]">
+                    Book Tickets
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="aboutMovie w-[85%] ms-[7.5%] mt-[30px]">
+        <p class="text-2xl font-semibold">About the movie</p>
+        
+        <p class="w-[75%] mt-[5px] text-[15px]"><%= singleData.description%></p>
+    </div>
+
+</body>
+
+</html>

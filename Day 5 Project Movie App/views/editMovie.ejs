@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+    <div class="div flex justify-center items-center">
+        <form action="/updateMovie" enctype="multipart/form-data" method="post" class="h-[70vh] mt-[15vh] bg-white w-[35%] border border-black rounded-[5px]">
+            <p class="text-center text-3xl mt-3">Edit Movie</p>
+
+            <input type="text" hidden value="<%= data.id%>" placeholder="Enter Id" name="id" id="">
+            <div class="input w-[80%] ms-[10%] mt-3">
+                <label for="">Movie Image :</label><br>
+                <input type="file" name="image">
+            </div>
+
+            <div class="input w-[80%] ms-[10%] mt-3">
+                <label for="">Enter Movie Name :</label><br>
+                <input type="text" value="<%= data.name%>" class="h-[40px] w-[100%] mt-1 border border-[#838383] rounded-[5px]"
+                    placeholder="Enter movie name" name="name" id="">
+            </div>
+
+            <div class="input w-[80%] ms-[10%] mt-3">
+                <label for="">Enter Category :</label><br>
+                <input type="text" value="<%= data.category%>" class="h-[40px] w-[100%] mt-1 border border-[#838383] rounded-[5px]"
+                    placeholder="Enter category" name="category" id="">
+            </div>
+
+            <div class="input w-[80%] ms-[10%] mt-3">
+                <label for="">Enter Rating :</label><br>
+                <input type="text" value="<%= data.rating%>" class="h-[40px] w-[100%] mt-1 border border-[#838383] rounded-[5px]"
+                    placeholder="Enter Rating   e.g 8.5/10" name="rating" id="">
+            </div>
+            <br>
+            <center>
+                <button class="h-[35px] px-3 bg-[#d54048] text-white rounded-[5px]" type="submit">Edit Movie</button>
+            </center>
+        </form>
+    </div>
+</body>
+
+</html>

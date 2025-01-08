@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+
+    <!-- add movie form -->
+
+    <div id="addMovie" class="addMovie absolute top-0 h-[100vh] w-[100%] z-50">
+
+        <div class="div flex justify-center items-center">
+            <form action="/addMovie" enctype="multipart/form-data" method="post"
+                class="h-[80vh] mt-[10vh] overflow-scroll bg-white w-[35%]">
+                <i onclick="closeAddMovie()"
+                    class="fa-solid fa-xmark relative top-[10px] left-[95%] cursor-pointer"></i>
+
+                <p class="text-center text-3xl">Add Movies</p>
+
+                <div class="input w-[80%] ms-[10%] mt-3">
+                    <label for="">Movie Image :</label><br>
+                    <input type="file" name="image">
+                </div>
+
+                <div class="input w-[80%] ms-[10%] mt-3">
+                    <label for="">Movie Background Image :</label><br>
+                    <input type="file" name="bgImage">
+                </div>
+
+                <div class="input w-[80%] ms-[10%] mt-3">
+                    <label for="">Enter Movie Name :</label><br>
+                    <input type="text" class="h-[40px] w-[100%] mt-1 border border-[#838383] rounded-[5px]"
+                        placeholder="Enter movie name" name="name" id="">
+                </div>
+
+                <div class="input w-[80%] ms-[10%] mt-3">
+                    <label for="">Enter Category :</label><br>
+                    <input type="text" class="h-[40px] w-[100%] mt-1 border border-[#838383] rounded-[5px]"
+                        placeholder="Enter category" name="category" id="">
+                </div>
+
+                <div class="input w-[80%] ms-[10%] mt-3">
+                    <label for="">Enter Rating :</label><br>
+                    <input type="text" class="h-[40px] w-[100%] mt-1 border border-[#838383] rounded-[5px]"
+                        placeholder="Enter Rating   e.g 8.5/10" name="rating" id="">
+                </div>
+
+                <div class="input w-[80%] ms-[10%] mt-3">
+                    <label for="">Enter Timing :</label><br>
+                    <input type="text" class="h-[40px] w-[100%] mt-1 border border-[#838383] rounded-[5px]"
+                        placeholder="Enter Timing   e.g 3h 20m" name="timing" id="">
+                </div>
+
+                <div class="input w-[80%] ms-[10%] mt-3">
+                    <label for="">Enter Dimensions :</label><br>
+                    <input type="text" class="h-[40px] w-[100%] mt-1 border border-[#838383] rounded-[5px]"
+                        placeholder="Enter Dimensions   e.g 1D, 2D, 3D" name="dimensions" id="">
+                </div>
+                
+                <div class="input w-[80%] ms-[10%] mt-3">
+                    <label for="">Enter Language :</label><br>
+                    <input type="text" class="h-[40px] w-[100%] mt-1 border border-[#838383] rounded-[5px]"
+                        placeholder="Enter Language" name="language" id="">
+                </div>
+
+                <div class="input w-[80%] ms-[10%] mt-3">
+                    <label for="">Enter Viewer :</label><br>
+                    <input type="text" class="h-[40px] w-[100%] mt-1 border border-[#838383] rounded-[5px]"
+                        placeholder="Enter Viewer   e.g UA16+" name="viewer" id="">
+                </div>
+                
+                <div class="input w-[80%] ms-[10%] mt-3">
+                    <label for="">Enter Release Date :</label><br>
+                    <input type="text" class="h-[40px] w-[100%] mt-1 border border-[#838383] rounded-[5px]"
+                        placeholder="Enter Relaese Date  e.g 5 Dec, 2024" name="releaseDate" id="">
+                </div>
+
+                
+                <div class="input w-[80%] ms-[10%] mt-3">
+                    <label for="">Enter Description :</label><br>
+                    <input type="text" class="h-[40px] w-[100%] mt-1 border border-[#838383] rounded-[5px]"
+                        placeholder="Enter Relaese Date  e.g 5 Dec, 2024" name="description" id="">
+                </div>
+
+                <br>
+                <center><button onclick="closeAddMovie()" class="h-[35px] px-3 bg-[#d54048] text-white rounded-[5px]"
+                        type="submit">Add Movie</button></center>
+            </form>
+        </div>
+
+    </div>
+
+    <header class="h-[70px] w-[100%] flex justify-center items-center border">
+        <nav class="flex w-[85%] items-center justify-between">
+            <div class="logo w-[15%]">
+                <img class="h-[55px]" src="/Images/logo.png" alt="">
+            </div>
+
+            <div class="searchBar relative w-[70%]">
+                <i class="fa-solid fa-magnifying-glass text-[#838383] absolute top-[13px] left-3"></i>
+                <input type="text" class="border w-[60%] rounded-[5px] h-[40px] ps-[45px]"
+                    placeholder="Search for Movies, Events, Plays, Sports and Activities">
+            </div>
+
+            <div class="movie w-[20%] flex items-center">
+                <p>Rajkot <i class="fa-solid fa-angle-down"></i></p>
+                <button
+                    class="h-[35px] px-[20px] bg-[#d54048] text-white rounded-[5px] flex gap-[10px] items-center ms-[15px]"
+                    onclick="handleAddMovie()"><i class="fa-solid fa-arrow-up-from-bracket"></i> Add Movie</button>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="movieDiv w-[85%] ms-[7.5%] mt-[30px]">
+        <p class="font-semibold text-2xl">Recommended Movies</p>
+
+        <div class="movie flex flex-wrap gap-[10px]">
+            <%movieData.map((e,i)=>{%>
+                <a href="/detailMovie?id=<%= e.id%>">
+                    <div class="movieData w-[19%] overflow-hidden relative mt-[30px]">
+                        <p class="hidden"><%= e.id%></p>
+                        <img class="movie_image rounded-[5px] h-[50vh] w-[100%]" src="<%= e.image%>" alt="">
+                        <div class="details h-[100px]">
+                            <p class="font-semibold mt-3">
+                                <%= e.name%>
+                            </p>
+                            <p class="text-[#838383]">
+                                <%= e.category%>
+                            </p>
+                        </div>
+
+                        <div class="editDiv">
+
+                            <a href="/editMovie?id=<%=e.id%>">
+                                <div class="editIcon">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </div>
+                            </a>
+
+                            <a href="/deleteMovie?id=<%=e.id%>">
+                                <div class="deleteIcon">
+                                    <i class="fa-solid fa-trash"></i>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </a>
+
+                <%})%>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    const handleAddMovie = () => {
+        let addMovieDiv = document.getElementById("addMovie");
+        addMovieDiv.style.opacity = "1";
+        addMovieDiv.style.visibility = "visible";
+    }
+
+    const closeAddMovie = () => {
+        let addMovieDiv = document.getElementById("addMovie");
+        addMovieDiv.style.opacity = "0";
+        addMovieDiv.style.visibility = "hidden";
+
+    }
+
+</script>
