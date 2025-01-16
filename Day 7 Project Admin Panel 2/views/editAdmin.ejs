@@ -3,64 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Admin</title>
     <link rel="shortcut icon" type="image/png" href="../assets/images/logos/seodashlogo.png" />
     <link rel="stylesheet" href="../../node_modules/simplebar/dist/simplebar.min.css">
     <link rel="stylesheet" href="../assets/css/styles.min.css" />  
     <script src="https://cdn.tailwindcss.com"></script>  
 </head>
-<body>
-    <div class="card-body flex justify-center items-center">
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
 
-        <form action="/updateData" class="w-[30%] mt-[7%]" method="post" enctype="multipart/form-data">
-          <p class="text-center text-2xl font-bold text-black">Edit Admin</p>
-          <input type="text" hidden value="<%= singleData.id%>" name="id" id="">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Profile Picture</label>
-            <input type="file" value="<%= singleData.image%>" name="image">
-          </div>
+    <div class="w-full max-w-lg p-[15px] bg-white rounded-lg shadow-lg h-[85vh] overflow-hidden">
+        <!-- Container with scroll -->
+        <div class="h-full overflow-y-auto">
+            <form action="/updateData" method="post" enctype="multipart/form-data" class="w-full">
+                <p class="text-center text-2xl font-bold text-gray-700 mb-6">Edit Admin</p>
+                <input type="text" hidden value="<%= singleData.id%>" name="id" id="">
+                
+                <div class="mb-4">
+                    <label for="image" class="block text-sm font-medium text-gray-700">Profile Picture</label>
+                    <input type="file" name="image" id="image" class="mt-2 h-[45px] block w-full border border-gray-300 rounded-sm shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
 
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">First Name</label>
-            <input type="text" class="form-control" value="<%= singleData.fname%>" name="fname" id="exampleInputName1">
-          </div>
+                <div class="mb-4">
+                    <label for="fname" class="block text-sm font-medium text-gray-700">First Name</label>
+                    <input type="text" name="fname" id="fname" value="<%= singleData.fname%>" class="mt-2 block w-full border border-gray-300 h-[45px] ps-2 rounded-sm shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
 
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Last Name</label>
-            <input type="text" class="form-control" value="<%= singleData.lname%>" name="lname" id="exampleInputName2">
-          </div>
+                <div class="mb-4">
+                    <label for="lname" class="block text-sm font-medium text-gray-700">Last Name</label>
+                    <input type="text" name="lname" id="lname" value="<%= singleData.lname%>" class="mt-2 block w-full border border-gray-300 h-[45px] ps-2 rounded-sm shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
 
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Contact No.</label>
-            <input type="text" class="form-control" value="<%= singleData.contact%>" name="contact" id="exampleInputContact">
-          </div>
-          
-          <div class="mb-3">
-            <label class="text-black" for="">Select Gender</label>
-            <br>
-            <label><input class="mt-3" type="radio" name="gender" value="Male"> Male </label>
-            <br>
+                <div class="mb-4">
+                    <label for="contact" class="block text-sm font-medium text-gray-700">Contact No.</label>
+                    <input type="text" name="contact" id="contact" value="<%= singleData.contact%>" class="mt-2 block w-full border border-gray-300 h-[45px] ps-2 rounded-sm shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
 
-            <label><input type="radio" name="gender" value="Female"> Female </label>
-            <br>
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700">Select Gender</label>
+                    <div class="flex items-center space-x-4 mt-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="gender" value="Male" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="ml-2 text-gray-600">Male</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="gender" value="Female" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="ml-2 text-gray-600">Female</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="gender" value="Other" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="ml-2 text-gray-600">Other</span>
+                        </label>
+                    </div>
+                </div>
 
-            <label><input type="radio" name="gender" value="Other"> Other </label>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                    <input type="email" name="email" id="email" value="<%= singleData.email%>" class="mt-2 block w-full border border-gray-300 h-[45px] ps-2 rounded-sm shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <p class="text-xs text-gray-500 mt-1">We'll never share your email with anyone else.</p>
+                </div>
 
-          </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" name="password" id="password" value="<%= singleData.password%>" class="mt-2 block w-full border border-gray-300 h-[45px] ps-2 rounded-sm shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
 
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="text" class="form-control" value="<%= singleData.email%>" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-          </div>
+                <button type="submit" class="w-full bg-blue-600 text-white text-sm font-medium py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
 
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" value="<%= singleData.password%>" name="password" id="exampleInputPassword1">
-          </div>
-
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
 </body>
 </html>
