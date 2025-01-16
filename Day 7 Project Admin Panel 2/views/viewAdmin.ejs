@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/seodashlogo.png" />
+  <link rel="stylesheet" href="../../node_modules/simplebar/dist/simplebar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <%- include("aside")%>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      <%- include("header")%>
+      <!--  Header End -->
+      <div class="container-fluid">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              
+              <div class="overflow-x-auto border rounded-lg shadow-md">
+                <table class="table-auto border-collapse border border-gray-300 w-full text-center">
+                    <thead class="bg-gray-200 sticky top-0">
+                        <tr>
+                            <th class="border border-gray-300 px-6 py-3 text-gray-700 font-semibold">No.</th>
+                            <th class="border border-gray-300 px-6 py-3 text-gray-700 font-semibold">Image</th>
+                            <th class="border border-gray-300 px-6 py-3 text-gray-700 font-semibold">First Name</th>
+                            <th class="border border-gray-300 px-6 py-3 text-gray-700 font-semibold">Last Name</th>
+                            <th class="border border-gray-300 px-6 py-3 text-gray-700 font-semibold">Contact No.</th>
+                            <th class="border border-gray-300 px-6 py-3 text-gray-700 font-semibold">Gender</th>
+                            <th class="border border-gray-300 px-6 py-3 text-gray-700 font-semibold">E-mail</th>
+                            <th class="border border-gray-300 px-6 py-3 text-gray-700 font-semibold">Password</th>
+                            <th class="border border-gray-300 px-6 py-3 text-gray-700 font-semibold">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        <% data.map((e, i) => { %>
+                            <tr class="hover:bg-gray-100 border-b border-gray-300">
+                                <td class="px-6 py-3 text-gray-800"><%= i + 1 %></td>
+                                <td class="px-6 py-3">
+                                    <img style="height: 50px; width: 50px;"
+                                        class="rounded-full object-cover mx-auto"
+                                        src="<%= e.image %>"
+                                        alt="Profile Picture"
+                                    />
+                                </td>
+                                <td class="px-6 py-3 text-gray-800"><%= e.fname %></td>
+                                <td class="px-6 py-3 text-gray-800"><%= e.lname %></td>
+                                <td class="px-6 py-3 text-gray-800"><%= e.contact %></td>
+                                <td class="px-6 py-3 text-gray-800"><%= e.gender %></td>
+                                <td class="px-6 py-3 text-gray-800"><%= e.email %></td>
+                                <td class="px-6 py-3 text-gray-800"><%= e.password %></td>
+                                <td class="px-6 py-3 flex gap-3 justify-center">
+                                    <button class="bg-blue-500 text-white px-3 py-2 rounded transition">
+                                        <a href="/editData?id=<%= e.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    </button>
+                                    <button class="bg-red-500 text-white px-3 py-2 rounded transition">
+                                        <a href="/deleteData?id=<%= e.id %>"><i class="fa-solid fa-trash"></i></a>
+                                    </button>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            
+            
+            
+             
+            </div>
+          </div>
+        </div>
+        <div class="py-6 px-6 text-center">
+          <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank"
+              class="pe-1 text-primary text-decoration-underline">AdminMart.com</a> Distributed by <a href="https://themewagon.com/" target="_blank"
+              class="pe-1 text-primary text-decoration-underline">ThemeWagon</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  <script src="../assets/js/sidebarmenu.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+
+</html>
