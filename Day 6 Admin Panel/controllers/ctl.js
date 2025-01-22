@@ -52,3 +52,7 @@ module.exports.updateData = async (req, res) => {
             res.redirect("/tabels");
         })
 }
+
+module.exports.profile = (req,res)=>{
+    res.render("profile")
+}

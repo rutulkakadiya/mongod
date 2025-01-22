@@ -13,5 +13,6 @@ route.post("/addData", ctl.addData)
 route.get("/deleteData", ctl.deleteData)
 route.get("/editData", ctl.editData)
 route.post("/updateData", ctl.updateData)
+route.get("/profile", ctl.profile)
 
 module.exports = route;
