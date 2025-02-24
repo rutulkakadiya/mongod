@@ -4,9 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f5f7ff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        select {
+            background: white;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #5a6fd6;
+        }
+
+        [hidden] {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <form action="/updateTask" method="post">
+        <center>
+            <h1>Edit Task</h1>
+        </center>
         <input type="text" placeholder="Enter Task id" value="<%= data.id%>" name="id" hidden>
         <input type="text" placeholder="Enter Task name" value="<%= data.task%>" name="task">
         <select name="priority" id="" value="<%= data.priority%>">
@@ -14,11 +85,8 @@
             <option value="low">Low</option>
             <option value="medium">Medium</option>
         </select>
-
         <input type="text" placeholder="Enter Task assigned to name" value="<%= data.assignedTo%>" name="assignedTo">
-
         <button type="submit">Update Task</button>
     </form>
-
 </body>
 </html>

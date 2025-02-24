@@ -5,14 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #5a6fd6;
+        }
+
+        .register-btn {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+        }
+
+        .register-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+</style>
 <body>
     <form action="/loginUser" method="post">
-        <input type="text" placeholder="Enter email" name="email">
-        <input type="text" placeholder="Enter password" name="password">
-
+        <center>
+            <h1>Login</h1>
+        </center>
+        <input type="email" placeholder="Enter email" name="email" required>
+        <input type="password" placeholder="Enter password" name="password" required>
         <button type="submit">Login</button>
+        <a href="/register"><button type="button" class="register-btn">Register</button></a>
     </form>
 
-    <a href="/register"><button>Register</button></a>
 </body>
 </html>
