@@ -10,5 +10,7 @@ route.get("/dashboard", ctl.dashboard);
 
 route.post("/addTask", ctl.addTask);
 route.get("/deleteTask", ctl.deleteTask);
+route.get("/editTask", ctl.editTask);
+route.post("/updateTask", ctl.updateTask);
 
 module.exports = route;

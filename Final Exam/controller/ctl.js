@@ -51,3 +51,17 @@ module.exports.deleteTask = async (req,res)=>{
         res.redirect("/dashboard");
     })
 }
+
+module.exports.editTask = async (req,res)=>{
+    await taskSchema.findById(req.query.id)
+    .then((data)=>{
+        res.render("editTask",{data})
+    })
+}
+
+module.exports.updateTask = async (req,res)=>{
+    await taskSchema.findByIdAndUpdate(req.body.id, req.body)
+    .then(()=>{
+        res.redirect("/dashboard");
+    })
+}

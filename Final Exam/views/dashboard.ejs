@@ -26,6 +26,7 @@
             <p>Task Priority: <%= e.priority%></p>
             <p>Task assigned to: <%= e.assignedTo%></p>
 
+            <button><a href="/editTask?id=<%=e.id%>">Edit</a></button>
             <button><a href="/deleteTask?id=<%=e.id%>">Delete</a></button>
         </div>
     <%})%>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/updateTask" method="post">
+        <input type="text" placeholder="Enter Task id" value="<%= data.id%>" name="id" hidden>
+        <input type="text" placeholder="Enter Task name" value="<%= data.task%>" name="task">
+        <select name="priority" id="" value="<%= data.priority%>">
+            <option value="high">High</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+        </select>
+
+        <input type="text" placeholder="Enter Task assigned to name" value="<%= data.assignedTo%>" name="assignedTo">
+
+        <button type="submit">Update Task</button>
+    </form>
+
+</body>
+</html>
