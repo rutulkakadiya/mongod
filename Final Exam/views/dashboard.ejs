@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="/addTask" method="post">
+        <input type="text" placeholder="Enter Task name" name="task">
+        <select name="priority" id="">
+            <option value="high">High</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+        </select>
+
+        <input type="text" placeholder="Enter Task assigned to name" name="assignedTo">
+
+        <button type="submit">Add Task</button>
+    </form>
+
+    <%task.map((e,i)=>{%>
+        <div>
+            <p>Task Name: <%= e.task%></p>
+            <p>Task Priority: <%= e.priority%></p>
+            <p>Task assigned to: <%= e.assignedTo%></p>
+
+            <button><a href="/deleteTask?id=<%=e.id%>">Delete</a></button>
+        </div>
+    <%})%>
+</body>
+</html>
